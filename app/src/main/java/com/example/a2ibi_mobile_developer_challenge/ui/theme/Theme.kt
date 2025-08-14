@@ -19,7 +19,8 @@ private val DarkColorScheme = darkColorScheme(
 
 @Composable
 fun _2iBimobiledeveloperchallengeTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+//    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = false,
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
