@@ -31,7 +31,7 @@ fun AppNavigation (
            modifier = Modifier.padding(innerPadding)
        ){
            composable("home"){
-               HomeScreen()
+               HomeScreen(navController)
            }
        }
 
