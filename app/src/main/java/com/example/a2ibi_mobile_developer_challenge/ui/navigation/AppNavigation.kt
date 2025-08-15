@@ -1,17 +1,18 @@
 package com.example.a2ibi_mobile_developer_challenge.ui.navigation
 
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.a2ibi_mobile_developer_challenge.ui.screens.HomeScreen
+import com.example.a2ibi_mobile_developer_challenge.ui.screens.home.HomeScreen
 
+@ExperimentalMaterial3Api
 @Composable
 fun AppNavigation (
 ){
