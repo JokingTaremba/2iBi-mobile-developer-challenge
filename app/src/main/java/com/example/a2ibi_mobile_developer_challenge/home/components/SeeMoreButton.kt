@@ -1,4 +1,4 @@
-package com.example.a2ibi_mobile_developer_challenge.ui.screens.home.components
+package com.example.a2ibi_mobile_developer_challenge.home.components
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer

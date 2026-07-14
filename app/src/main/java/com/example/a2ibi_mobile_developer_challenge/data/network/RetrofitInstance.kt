@@ -1,6 +1,5 @@
 package com.example.a2ibi_mobile_developer_challenge.data.network
 
-import com.example.a2ibi_mobile_developer_challenge.data.network.interfaces.ApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit

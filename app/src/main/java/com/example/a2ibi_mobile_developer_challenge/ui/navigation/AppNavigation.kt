@@ -10,9 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.a2ibi_mobile_developer_challenge.ui.screens.home.HomeScreen
+import com.example.a2ibi_mobile_developer_challenge.home.HomeScreen
 
-@ExperimentalMaterial3Api
 @Composable
 fun AppNavigation (
 ){

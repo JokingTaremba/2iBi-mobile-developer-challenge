@@ -1,23 +1,43 @@
-package com.example.a2ibi_mobile_developer_challenge.ui.screens.home
+package com.example.a2ibi_mobile_developer_challenge.home
 
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Menu
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.example.a2ibi_mobile_developer_challenge.data.RepositoryProvider
 import com.example.a2ibi_mobile_developer_challenge.ui.components.BackgroundScaffold
-import com.example.a2ibi_mobile_developer_challenge.ui.screens.home.components.CountryCard
+import com.example.a2ibi_mobile_developer_challenge.home.components.CountryCard
 import com.example.a2ibi_mobile_developer_challenge.ui.theme.OnBackground
 import com.example.a2ibi_mobile_developer_challenge.ui.theme.Surface
+import com.example.a2ibi_mobile_developer_challenge.viewModels.CountryViewModel
+import com.example.a2ibi_mobile_developer_challenge.viewModels.CountryViewModelFactory
+import androidx.compose.runtime.getValue
 
-@ExperimentalMaterial3Api
 @Composable
-fun HomeScreen (navController: NavController){
+fun HomeScreen (
+    navController: NavController
+){
+    val viewModel: CountryViewModel = viewModel(
+        factory = CountryViewModelFactory(
+            RepositoryProvider.countryRepository
+        )
+    )
+
+    val countries by viewModel.countries.collectAsState()
+
+    LaunchedEffect(Unit){
+        viewModel.fetchCountries()
+    }
+
     BackgroundScaffold(
         topBar = {
             TopAppBar(
@@ -43,10 +63,17 @@ fun HomeScreen (navController: NavController){
         }
 
     ) {
-        CountryCard()
-        CountryCard()
-        CountryCard()
-        CountryCard()
+        LazyColumn {
+
+            items(countries){ country ->
+
+                CountryCard(
+                    country = country
+                )
+
+            }
+
+        }
 
     }
 }
