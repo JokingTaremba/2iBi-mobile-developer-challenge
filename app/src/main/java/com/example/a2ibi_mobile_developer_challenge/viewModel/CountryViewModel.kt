@@ -2,7 +2,6 @@ package com.example.a2ibi_mobile_developer_challenge.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.a2ibi_mobile_developer_challenge.data.model.Country
 import com.example.a2ibi_mobile_developer_challenge.data.repository.CountryRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -10,28 +9,34 @@ import kotlinx.coroutines.launch
 
 class CountryViewModel(
     private val repository: CountryRepository
-): ViewModel(){
+) : ViewModel() {
 
-    private val _countries =
-        MutableStateFlow<List<Country>>(emptyList())
+    private val _uiState =
+        MutableStateFlow<CountryUiState>(
+            CountryUiState.Loading
+        )
 
-    val countries: StateFlow<List<Country>>
-        get() = _countries
-
-    private val _error =
-        MutableStateFlow<String?>(null)
-
-    val error: StateFlow<String?>
-        get() = _error
+    val uiState: StateFlow<CountryUiState> =
+        _uiState
 
     fun fetchCountries(){
         viewModelScope.launch {
+            _uiState.value =
+                CountryUiState.Loading
             try {
-                _countries.value =
+                val countries =
                     repository.getCountries()
-            }catch(e: Exception){
-                _error.value =
-                    e.message
+
+                _uiState.value =
+                    CountryUiState.Success(
+                        countries
+                    )
+            } catch(e: Exception){
+                _uiState.value =
+                    CountryUiState.Error(
+                        e.message
+                            ?: "Erro desconhecido"
+                    )
             }
         }
     }

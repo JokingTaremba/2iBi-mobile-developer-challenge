@@ -8,6 +8,10 @@ class CountryRepository(
     private val apiService: ApiService
 ) {
     suspend fun getCountries(): List<Country> {
-        return apiService.getAllCountries()
+        return apiService
+            .getAllCountries()
+            .sortedBy {
+                it.name?.common
+            }
     }
 }

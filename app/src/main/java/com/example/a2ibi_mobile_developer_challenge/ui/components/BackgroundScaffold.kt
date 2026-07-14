@@ -19,10 +19,12 @@ fun BackgroundScaffold(
             .background(brush = backgroundGradient)
     ) {
         Column {
-            if (topBar != null) {
-                topBar()
+            topBar?.invoke()
+            Box(
+                modifier = Modifier.weight(1f)
+            ) {
+                content()
             }
-            content()
         }
     }
 }
