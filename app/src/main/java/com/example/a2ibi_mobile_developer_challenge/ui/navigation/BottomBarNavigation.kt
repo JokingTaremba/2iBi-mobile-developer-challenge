@@ -5,18 +5,14 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.a2ibi_mobile_developer_challenge.ui.theme.Accent
 import com.example.a2ibi_mobile_developer_challenge.ui.theme.OnBackground
 import com.example.a2ibi_mobile_developer_challenge.ui.theme.OnSurface
-import com.example.a2ibi_mobile_developer_challenge.ui.theme.Primary
 import com.example.a2ibi_mobile_developer_challenge.ui.theme.Secondary
 import com.example.a2ibi_mobile_developer_challenge.ui.theme.Surface
 

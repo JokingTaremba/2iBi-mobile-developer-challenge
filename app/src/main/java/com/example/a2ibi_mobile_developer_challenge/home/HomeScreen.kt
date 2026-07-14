@@ -18,8 +18,8 @@ import com.example.a2ibi_mobile_developer_challenge.ui.components.BackgroundScaf
 import com.example.a2ibi_mobile_developer_challenge.home.components.CountryCard
 import com.example.a2ibi_mobile_developer_challenge.ui.theme.OnBackground
 import com.example.a2ibi_mobile_developer_challenge.ui.theme.Surface
-import com.example.a2ibi_mobile_developer_challenge.viewModels.CountryViewModel
-import com.example.a2ibi_mobile_developer_challenge.viewModels.CountryViewModelFactory
+import com.example.a2ibi_mobile_developer_challenge.viewModel.CountryViewModel
+import com.example.a2ibi_mobile_developer_challenge.viewModel.CountryViewModelFactory
 import androidx.compose.runtime.getValue
 
 @Composable

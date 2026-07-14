@@ -1,7 +1,6 @@
 package com.example.a2ibi_mobile_developer_challenge.ui.navigation
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.runtime.Composable

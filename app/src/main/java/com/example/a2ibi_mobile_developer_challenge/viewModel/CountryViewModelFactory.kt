@@ -1,4 +1,4 @@
-package com.example.a2ibi_mobile_developer_challenge.viewModels
+package com.example.a2ibi_mobile_developer_challenge.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
