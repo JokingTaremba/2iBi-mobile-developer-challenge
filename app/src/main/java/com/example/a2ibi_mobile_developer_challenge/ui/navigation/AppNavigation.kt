@@ -4,32 +4,28 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.a2ibi_mobile_developer_challenge.home.HomeScreen
 
 @Composable
-fun AppNavigation (
-){
-    val navController = rememberNavController()
+fun AppNavigation (){
 
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    val currentRoute = navBackStackEntry?.destination?.route
+    val navController = rememberNavController()
 
     Scaffold (
         bottomBar = {
-            BottomBarNavigation(navController = navController)
+            BottomBarNavigation(navController)
         }
-    ){ innerPadding ->
+    ){ padding ->
+
        NavHost(
            navController = navController,
-           startDestination = "home",
-           modifier = Modifier.padding(innerPadding)
+           startDestination = Screen.Home.route,
+           modifier = Modifier.padding(padding)
        ){
-           composable("home"){
+           composable(Screen.Home.route){
                HomeScreen(navController)
            }
        }
