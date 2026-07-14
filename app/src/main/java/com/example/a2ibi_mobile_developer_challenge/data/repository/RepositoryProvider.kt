@@ -1,7 +1,6 @@
-package com.example.a2ibi_mobile_developer_challenge.data
+package com.example.a2ibi_mobile_developer_challenge.data.repository
 
 import com.example.a2ibi_mobile_developer_challenge.data.network.RetrofitInstance
-import com.example.a2ibi_mobile_developer_challenge.data.repository.CountryRepository
 
 object RepositoryProvider {
     val countryRepository by lazy {

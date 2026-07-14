@@ -16,7 +16,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-import com.example.a2ibi_mobile_developer_challenge.data.RepositoryProvider
+import com.example.a2ibi_mobile_developer_challenge.data.repository.RepositoryProvider
 import com.example.a2ibi_mobile_developer_challenge.home.components.CountryCard
 import com.example.a2ibi_mobile_developer_challenge.ui.components.BackgroundScaffold
 import com.example.a2ibi_mobile_developer_challenge.ui.theme.OnBackground
