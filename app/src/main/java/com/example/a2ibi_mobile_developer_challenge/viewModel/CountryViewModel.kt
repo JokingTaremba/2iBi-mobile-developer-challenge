@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.a2ibi_mobile_developer_challenge.data.repository.CountryRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class CountryViewModel(
@@ -17,7 +18,7 @@ class CountryViewModel(
         )
 
     val uiState: StateFlow<CountryUiState> =
-        _uiState
+        _uiState.asStateFlow()
 
     fun fetchCountries(){
         viewModelScope.launch {

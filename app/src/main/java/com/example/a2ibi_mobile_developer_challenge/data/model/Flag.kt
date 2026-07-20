@@ -1,6 +1,10 @@
 package com.example.a2ibi_mobile_developer_challenge.data.model
 
-data class Flags(
+import com.squareup.moshi.Json
+
+data class Flag(
+    @Json(name = "url_png")
     val png: String?,
+    @Json(name = "url_svg")
     val svg: String?
 )

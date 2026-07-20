@@ -9,9 +9,11 @@ class CountryRepository(
 ) {
     suspend fun getCountries(): List<Country> {
         return apiService
-            .getAllCountries()
+            .getCountries()
+            .data
+            .objects
             .sortedBy {
-                it.name?.common
+                it.names.common.orEmpty()
             }
     }
 }

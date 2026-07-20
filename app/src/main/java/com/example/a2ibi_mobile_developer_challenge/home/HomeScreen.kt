@@ -87,13 +87,13 @@ fun HomeScreen(
                     items(
                         items = state.countries,
                         key = {
-                            it.name?.common ?: ""
+                            it.names?.common ?: ""
                         }
                     ){ country ->
                         CountryCard(
                             country = country,
                             onClick = {
-                                // navController.navigate("country/${country.name}")
+                                 navController.navigate("country/${country.names}")
                             }
                         )
                     }

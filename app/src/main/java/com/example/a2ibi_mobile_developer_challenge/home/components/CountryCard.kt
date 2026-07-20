@@ -48,7 +48,7 @@ fun CountryCard(
             ){
                 AsyncImage(
                     model = ImageRequest.Builder(LocalContext.current)
-                        .data(country.flags?.png)
+                        .data(country.flag?.png)
                         .crossfade(true)
                         .build(),
 
@@ -56,19 +56,20 @@ fun CountryCard(
                 )
 
                 CountryInfo(
-                    name = country.name?.common
-                        ?: "Unknown",
-                    capital = country.capital
+                    name = country.names?.common
+                        ?: "Desconhecido",
+                    capital = country.capitals
                         ?.firstOrNull()
-                        ?: "Unknown",
+                        ?.name
+                        ?: "Sem capital",
                     region = country.region
-                        ?: "Unknown"
+                        ?: "Sem região"
                 )
             }
 
             CountryExtraInfo(
                 population = country.population,
-                area = country.area
+//                area = country.area
             )
             Box(
                 modifier = Modifier.fillMaxWidth(),
